@@ -18,7 +18,7 @@ export const HW4 = () => {
     ]);
 
     const handleSave = () => {
-        setTexts([...texts, currentText]);
+        setTexts([currentText, ...texts]);
         setCurrentText('');
     };
 
@@ -43,7 +43,7 @@ export const HW4 = () => {
                     return (
 
                         <li key={index} id={`hw04-task-${index}`}
-                            className={(texts.indexOf(el) % 2 !== 0) ? S.chetNechet : ''}>
+                            className={(texts.indexOf(el) % 2 === 0) ? S.chetNechet : ''}>
                             {el}
                         </li>
                     );
